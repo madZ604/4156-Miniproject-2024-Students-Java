@@ -5,3 +5,18 @@
 2. File: Course.java
    Function: getInstructorName
    Bug: Returning 'courseLocation' instead of 'instructorName'
+
+3. File: Course.java
+   Function: isCourseFull
+   Bug: Returning enrollmentCapacity > enrolledStudentCount
+        instead of enrollmentCapacity <= enrolledStudentCount
+
+4. File: Course.java
+   Function: enrollStudent
+   Bug: Always returning false and enrolling students without checking
+        if the course is full
+
+5. File: Course.java
+   Function: dropStudent
+   Bug: Always returning false and dropping students without checking
+        if the course is empty

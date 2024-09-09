@@ -30,8 +30,10 @@ public class Course implements Serializable {
   * @return true if the student is successfully enrolled, false otherwise.
   */
   public boolean enrollStudent() {
-    enrolledStudentCount++;
-    // bug
+    if (!isCourseFull()){
+      enrolledStudentCount++;
+      return true;
+    }
     return false;
   }
 
@@ -41,8 +43,10 @@ public class Course implements Serializable {
   * @return true if the student is successfully dropped, false otherwise.
   */
   public boolean dropStudent() {
-    enrolledStudentCount--;
-    // bug
+    if (enrolledStudentCount > 0) {
+      enrolledStudentCount--;
+      return true;
+    }
     return false;
   }
 
@@ -89,8 +93,7 @@ public class Course implements Serializable {
 
 
   public boolean isCourseFull() {
-    // bug: course is full if >=
-    return enrollmentCapacity > enrolledStudentCount;
+    return enrollmentCapacity <= enrolledStudentCount;
   }
 
   @Serial

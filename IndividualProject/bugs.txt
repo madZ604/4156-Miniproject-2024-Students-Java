@@ -20,3 +20,19 @@
    Function: dropStudent
    Bug: Always returning false and dropping students without checking
         if the course is empty
+
+6. File: Department.java
+   Function: getNumberOfMajors
+   Bug: Returns negative of number of majors
+
+7. File: Department.java
+   Function: getDepartmentChair
+   Bug: Returns "this.departmentChair" instead of this.departmentChair
+
+8. File: Department.java
+   Function: dropPersonFromMajor
+   Bug: Subtracts one from numberOfMajors without check
+
+9. File: Department.java
+   Function: toString
+   Bug: Returns "result.toString()" instead of result.toString()

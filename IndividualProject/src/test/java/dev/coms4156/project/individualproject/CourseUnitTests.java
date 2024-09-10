@@ -23,12 +23,12 @@ public class CourseUnitTests {
 
 
   @Test
-  public void enrollStudentTest(){
+  public void enrollStudentTest() {
     assertFalse(testCourse.enrollStudent());
   }
 
   @Test
-  public void dropStudentTest(){
+  public void dropStudentTest() {
     assertTrue(testCourse.dropStudent());
   }
 

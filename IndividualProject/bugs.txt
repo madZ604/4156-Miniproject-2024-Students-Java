@@ -36,3 +36,15 @@
 9. File: Department.java
    Function: toString
    Bug: Returns "result.toString()" instead of result.toString()
+
+10. File: RouteController.java
+   Function: retrieveDepartment
+   Bug: Http response interchanged
+
+11. File: RouteController.java
+   Function: getMajorCtFromDept
+   Bug: -ve numberOfMajors
+
+12. File: RouteController.java
+   Function: getMajorCtFromDept
+   Bug: When dept not found, returning http 403 instead of 404

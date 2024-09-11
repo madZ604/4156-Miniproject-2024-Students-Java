@@ -25,11 +25,15 @@ public class CourseUnitTests {
   @Test
   public void enrollStudentTest() {
     assertFalse(testCourse.enrollStudent());
+    testCourse = new Course("Griffin Newbold", "417 IAB", "11:40-12:55", 550);
+    assertTrue(testCourse.enrollStudent());
   }
 
   @Test
   public void dropStudentTest() {
     assertTrue(testCourse.dropStudent());
+    testCourse.setEnrolledStudentCount(0);
+    assertFalse(testCourse.dropStudent());
   }
 
 

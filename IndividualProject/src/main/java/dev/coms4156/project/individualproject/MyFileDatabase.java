@@ -32,7 +32,6 @@ public class MyFileDatabase {
    *
    * @param mapping the mapping of department names to Department objects
    */
-  // covered
   public void setMapping(HashMap<String, Department> mapping) {
     this.departmentMapping = mapping;
   }
@@ -74,7 +73,6 @@ public class MyFileDatabase {
    *
    * @return the department mapping
    */
-  // covered
   public HashMap<String, Department> getDepartmentMapping() {
     return this.departmentMapping;
   }

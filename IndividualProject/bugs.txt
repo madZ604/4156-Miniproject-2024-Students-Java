@@ -48,3 +48,7 @@
 12. File: RouteController.java
    Function: getMajorCtFromDept
    Bug: When dept not found, returning http 403 instead of 404
+
+13. File: RouteController.java
+   Function: findCourseTime
+   Bug: Not adding course time in return entity

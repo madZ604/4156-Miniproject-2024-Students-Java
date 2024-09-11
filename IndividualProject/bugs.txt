@@ -5,3 +5,50 @@
 2. File: Course.java
    Function: getInstructorName
    Bug: Returning 'courseLocation' instead of 'instructorName'
+
+3. File: Course.java
+   Function: isCourseFull
+   Bug: Returning enrollmentCapacity > enrolledStudentCount
+        instead of enrollmentCapacity <= enrolledStudentCount
+
+4. File: Course.java
+   Function: enrollStudent
+   Bug: Always returning false and enrolling students without checking
+        if the course is full
+
+5. File: Course.java
+   Function: dropStudent
+   Bug: Always returning false and dropping students without checking
+        if the course is empty
+
+6. File: Department.java
+   Function: getNumberOfMajors
+   Bug: Returns negative of number of majors
+
+7. File: Department.java
+   Function: getDepartmentChair
+   Bug: Returns "this.departmentChair" instead of this.departmentChair
+
+8. File: Department.java
+   Function: dropPersonFromMajor
+   Bug: Subtracts one from numberOfMajors without check
+
+9. File: Department.java
+   Function: toString
+   Bug: Returns "result.toString()" instead of result.toString()
+
+10. File: RouteController.java
+   Function: retrieveDepartment
+   Bug: Http response interchanged
+
+11. File: RouteController.java
+   Function: getMajorCtFromDept
+   Bug: -ve numberOfMajors
+
+12. File: RouteController.java
+   Function: getMajorCtFromDept
+   Bug: When dept not found, returning http 403 instead of 404
+
+13. File: RouteController.java
+   Function: findCourseTime
+   Bug: Not adding course time in return entity

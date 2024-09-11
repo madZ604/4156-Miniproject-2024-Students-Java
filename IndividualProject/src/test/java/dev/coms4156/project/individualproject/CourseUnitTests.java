@@ -1,8 +1,10 @@
 package dev.coms4156.project.individualproject;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
@@ -14,9 +16,24 @@ import org.springframework.test.context.ContextConfiguration;
 @ContextConfiguration
 public class CourseUnitTests {
 
-  @BeforeAll
-  public static void setupCourseForTesting() {
+  @BeforeEach
+  public void setupCourseForTesting() {
     testCourse = new Course("Griffin Newbold", "417 IAB", "11:40-12:55", 250);
+  }
+
+
+  @Test
+  public void enrollStudentTest() {
+    assertFalse(testCourse.enrollStudent());
+    testCourse = new Course("Griffin Newbold", "417 IAB", "11:40-12:55", 550);
+    assertTrue(testCourse.enrollStudent());
+  }
+
+  @Test
+  public void dropStudentTest() {
+    assertTrue(testCourse.dropStudent());
+    testCourse.setEnrolledStudentCount(0);
+    assertFalse(testCourse.dropStudent());
   }
 
 
@@ -45,6 +62,32 @@ public class CourseUnitTests {
   public void getCourseTimeSlotTest() {
     String expectedResult = "11:40-12:55";
     assertEquals(expectedResult, testCourse.getCourseTimeSlot());
+  }
+
+  @Test
+  public void isCourseFullTest() {
+    assertTrue(testCourse.isCourseFull());
+  }
+
+
+  @Test
+  public void reassignInstructorTest() {
+    testCourse.reassignInstructor("New Instructor");
+    assertEquals("New Instructor", testCourse.getInstructorName());
+  }
+
+
+  @Test
+  public void reassignLocationTest() {
+    testCourse.reassignLocation("New Location");
+    assertEquals("New Location", testCourse.getCourseLocation());
+  }
+
+
+  @Test
+  public void reassignTimeTest() {
+    testCourse.reassignTime("New Time");
+    assertEquals("New Time", testCourse.getCourseTimeSlot());
   }
 
   /** The test course instance used for testing. */

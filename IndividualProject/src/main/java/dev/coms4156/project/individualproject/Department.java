@@ -34,8 +34,9 @@ public class Department implements Serializable {
    *
    * @return The number of majors.
    */
+  // covered
   public int getNumberOfMajors() {
-    return -this.numberOfMajors;
+    return this.numberOfMajors;
   }
 
   /**
@@ -43,8 +44,9 @@ public class Department implements Serializable {
    *
    * @return The name of the department chair.
    */
+  // covered
   public String getDepartmentChair() {
-    return "this.departmentChair";
+    return this.departmentChair;
   }
 
   /**
@@ -52,6 +54,7 @@ public class Department implements Serializable {
    *
    * @return A HashMap containing courses offered by the department.
    */
+  // covered
   public HashMap<String, Course> getCourseSelection() {
     return this.courses;
   }
@@ -59,6 +62,7 @@ public class Department implements Serializable {
   /**
    * Increases the number of majors in the department by one.
    */
+  // covered
   public void addPersonToMajor() {
     numberOfMajors++;
   }
@@ -66,8 +70,11 @@ public class Department implements Serializable {
   /**
    * Decreases the number of majors in the department by one if it's greater than zero.
    */
+  // covered
   public void dropPersonFromMajor() {
-    numberOfMajors--;
+    if (numberOfMajors > 0) {
+      numberOfMajors--;
+    }
   }
 
   /**
@@ -76,6 +83,7 @@ public class Department implements Serializable {
    * @param courseId The ID of the course to add.
    * @param course   The Course object to add.
    */
+  // covered
   public void addCourse(String courseId, Course course) {
     courses.put(courseId, course);
   }
@@ -89,6 +97,7 @@ public class Department implements Serializable {
    * @param courseTimeSlot     The time slot of the course.
    * @param capacity           The maximum number of students that can enroll in the course.
    */
+  // covered
   public void createCourse(String courseId, String instructorName, String courseLocation,
                            String courseTimeSlot, int capacity) {
     Course newCourse = new Course(instructorName, courseLocation, courseTimeSlot, capacity);
@@ -100,6 +109,7 @@ public class Department implements Serializable {
    *
    * @return A string representing the department.
    */
+  // covered
   public String toString() {
     StringBuilder result = new StringBuilder();
     for (Map.Entry<String, Course> entry : courses.entrySet()) {
@@ -108,7 +118,7 @@ public class Department implements Serializable {
       result.append(deptCode).append(" ").append(key).append(": ").append(value.toString())
           .append("\n");
     }
-    return "result.toString()";
+    return result.toString();
   }
 
   @Serial

@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 @ContextConfiguration
 public class MyFileDatabaseTest {
   public static String filePath = "./data.txt";
-  public static HashMap<String, Department> departmentMapping = new HashMap<>();
+  public static Map<String, Department> departmentMapping = new HashMap<>();
   public MyFileDatabase myFileDatabase;
 
   /**
@@ -44,7 +45,7 @@ public class MyFileDatabaseTest {
     coms3827.setEnrolledStudentCount(283);
     Course coms4156 = new Course("Gail Kaiser", "501 NWC", times[2], 120);
     coms4156.setEnrolledStudentCount(109);
-    HashMap<String, Course> courses = new HashMap<>();
+    Map<String, Course> courses = new HashMap<>();
     courses.put("1004", coms1004);
     courses.put("3134", coms3134);
     courses.put("3157", coms3157);
@@ -54,7 +55,6 @@ public class MyFileDatabaseTest {
     courses.put("3827", coms3827);
     courses.put("4156", coms4156);
     Department compSci = new Department("COMS", courses, "Luca Carloni", 2700);
-    HashMap<String, Department> mapping = new HashMap<>();
     departmentMapping.put("COMS", compSci);
 
     //data for econ dept

@@ -52,3 +52,104 @@
 13. File: RouteController.java
    Function: findCourseTime
    Bug: Not adding course time in return entity
+
+****************************************************************************************
+
+Bugs found by PMD:
+Course.java:69:	MissingOverride:	The method 'toString()' is missing an @Override annotation.
+Department.java:24:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+Department.java:58:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+Department.java:113:	MissingOverride:	The method 'toString()' is missing an @Override annotation.
+Department.java:126:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+IndividualProjectApplication.java:40:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+IndividualProjectApplication.java:85:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+IndividualProjectApplication.java:95:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+MyFileDatabase.java:35:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+MyFileDatabase.java:44:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+MyFileDatabase.java:54:	ReturnEmptyCollectionRatherThanNull:	Return an empty collection rather than null.
+MyFileDatabase.java:76:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+MyFileDatabase.java:100:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:40:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:42:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:45:	UseLocaleWithCaseConversions:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+RouteController.java:48:	UseLocaleWithCaseConversions:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+RouteController.java:72:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:73:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:77:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:79:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:110:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:111:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:117:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:119:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:144:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:148:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:170:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:174:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:199:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:200:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:206:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:208:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:237:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:238:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:244:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:246:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:275:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:276:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:282:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:284:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:308:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:312:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:335:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:339:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:364:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:365:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:371:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:373:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:396:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:397:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:397:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:404:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:406:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:433:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:434:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:434:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:441:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:443:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:471:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:472:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:472:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:479:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:481:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:499:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:500:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:500:	UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element
+RouteController.java:507:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteController.java:509:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+DepartmentUnitTests.java:20:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+IndividualProjectApplicationUnitTests.java:14:	SingularField:	Perhaps 'myFileDatabase' could be replaced by a local variable.
+MyFileDatabaseTest.java:19:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+MyFileDatabaseTest.java:47:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+MyFileDatabaseTest.java:57:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+MyFileDatabaseTest.java:57:	UnusedLocalVariable:	Avoid unused local variables such as 'mapping'.
+RouteControllerUnitTests.java:27:	SingularField:	Perhaps 'routeController' could be replaced by a local variable.
+RouteControllerUnitTests.java:28:	SingularField:	Perhaps 'myFileDatabase' could be replaced by a local variable.
+RouteControllerUnitTests.java:29:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+RouteControllerUnitTests.java:55:	MethodNamingConventions:	The JUnit 5 test method name 'retrieveCourseTest_True' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:68:	MethodNamingConventions:	The JUnit 5 test method name 'retrieveCourseTest_deptNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:79:	MethodNamingConventions:	The JUnit 5 test method name 'retrieveCourseTest_courseNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:90:	MethodNamingConventions:	The JUnit 5 test method name 'isCourseFullTest_courseNotFull' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:102:	MethodNamingConventions:	The JUnit 5 test method name 'isCourseFullTest_courseFull' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:114:	MethodNamingConventions:	The JUnit 5 test method name 'isCourseFullTest_courseNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:134:	MethodNamingConventions:	The JUnit 5 test method name 'getMajorCtFromDeptTest_deptNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:150:	MethodNamingConventions:	The JUnit 5 test method name 'identifyDeptChairTest_deptNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:170:	MethodNamingConventions:	The JUnit 5 test method name 'findCourseLocationTest_courseNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:194:	MethodNamingConventions:	The JUnit 5 test method name 'findCourseInstructorTest_courseNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:218:	MethodNamingConventions:	The JUnit 5 test method name 'findCourseTimeTest_NotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:230:	MethodNamingConventions:	The JUnit 5 test method name 'addAndRemoveMajorToDeptTest_success' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:243:	MethodNamingConventions:	The JUnit 5 test method name 'addMajorToDeptTest_deptNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:251:	MethodNamingConventions:	The JUnit 5 test method name 'removeMajorToDeptTest_deptNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:271:	MethodNamingConventions:	The JUnit 5 test method name 'dropStudentTest_deptNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:296:	MethodNamingConventions:	The JUnit 5 test method name 'setEnrollmentCountTest_deptNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:322:	MethodNamingConventions:	The JUnit 5 test method name 'changeCourseTimeTest_deptNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:348:	MethodNamingConventions:	The JUnit 5 test method name 'changeCourseTeacherTest_deptNotFound' doesn't match '[a-z][a-zA-Z0-9]*'
+RouteControllerUnitTests.java:374:	MethodNamingConventions:	The JUnit 5 test method name 'changeCourseLocationTest_NotFound' doesn't match '[a-z][a-zA-Z0-9]*'

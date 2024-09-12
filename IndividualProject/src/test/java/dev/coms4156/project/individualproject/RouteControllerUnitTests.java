@@ -6,6 +6,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,18 +25,16 @@ import org.springframework.util.MultiValueMap;
 public class RouteControllerUnitTests {
 
   private MockMvc mockMvc;
-  private RouteController routeController;
-  private MyFileDatabase myFileDatabase;
-  HashMap<String, Department> mapping = new HashMap<>();
+  Map<String, Department> mapping = new HashMap<>();
 
   /**
    * Tests for RouteController.java.
    */
   @BeforeEach
   public void setUp() {
-    routeController = new RouteController();
+    RouteController routeController = new RouteController();
     this.mockMvc = MockMvcBuilders.standaloneSetup(routeController).build();
-    myFileDatabase = new MyFileDatabase(0, "./data.txt");
+    MyFileDatabase myFileDatabase = new MyFileDatabase(0, "./data.txt");
     IndividualProjectApplication.overrideDatabase(myFileDatabase);
   }
 
@@ -52,7 +51,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void retrieveCourseTest_True() throws Exception {
+  public void retrieveCourseTestReturnsTrue() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "COMS");
     courseParams.add("courseCode", "1004");
@@ -65,7 +64,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void retrieveCourseTest_deptNotFound() throws Exception {
+  public void retrieveCourseTestDeptNotFound() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "XYZ");
     courseParams.add("courseCode", "1004");
@@ -76,7 +75,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void retrieveCourseTest_courseNotFound() throws Exception {
+  public void retrieveCourseTestCourseNotFound() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "COMS");
     courseParams.add("courseCode", "0");
@@ -87,7 +86,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void isCourseFullTest_courseNotFull() throws Exception {
+  public void isCourseFullTestCourseNotFull() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "COMS");
     courseParams.add("courseCode", "1004");
@@ -99,7 +98,7 @@ public class RouteControllerUnitTests {
   }
    
   @Test
-  public void isCourseFullTest_courseFull() throws Exception {
+  public void isCourseFullTestCourseFull() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "IEOR");
     courseParams.add("courseCode", "2500");
@@ -111,7 +110,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void isCourseFullTest_courseNotFound() throws Exception {
+  public void isCourseFullTestCourseNotFound() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "IEOR");
     courseParams.add("courseCode", "123");
@@ -131,7 +130,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void getMajorCtFromDeptTest_deptNotFound() throws Exception {
+  public void getMajorCtFromDeptTestDeptNotFound() throws Exception {
     mockMvc.perform(get("/getMajorCountFromDept").param("deptCode", "XYZ")
         .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isNotFound())
@@ -147,7 +146,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void identifyDeptChairTest_deptNotFound() throws Exception {
+  public void identifyDeptChairTestDeptNotFound() throws Exception {
     mockMvc.perform(get("/idDeptChair").param("deptCode", "XYZ")
         .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isNotFound())
@@ -167,7 +166,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void findCourseLocationTest_courseNotFound() throws Exception {
+  public void findCourseLocationTestCourseNotFound() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "COMS");
     courseParams.add("courseCode", "123");
@@ -191,7 +190,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void findCourseInstructorTest_courseNotFound() throws Exception {
+  public void findCourseInstructorTestCourseNotFound() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "COMS");
     courseParams.add("courseCode", "1");
@@ -215,7 +214,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void findCourseTimeTest_NotFound() throws Exception {
+  public void findCourseTimeTestNotFound() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "COMS");
     courseParams.add("courseCode", "1");
@@ -227,7 +226,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void addAndRemoveMajorToDeptTest_success() throws Exception {
+  public void addAndRemoveMajorToDeptTestSuccess() throws Exception {
     mockMvc.perform(patch("/addMajorToDept").param("deptCode", "COMS")
         .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
@@ -240,7 +239,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void addMajorToDeptTest_deptNotFound() throws Exception {
+  public void addMajorToDeptTestDeptNotFound() throws Exception {
     mockMvc.perform(patch("/addMajorToDept").param("deptCode", "C")
         .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isNotFound())
@@ -248,7 +247,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void removeMajorToDeptTest_deptNotFound() throws Exception {
+  public void removeMajorToDeptTestDeptNotFound() throws Exception {
     mockMvc.perform(patch("/removeMajorFromDept").param("deptCode", "C")
         .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isNotFound())
@@ -268,7 +267,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void dropStudentTest_deptNotFound() throws Exception {
+  public void dropStudentTestDeptNotFound() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "COMS");
     courseParams.add("courseCode", "12");
@@ -293,7 +292,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void setEnrollmentCountTest_deptNotFound() throws Exception {
+  public void setEnrollmentCountTestDeptNotFound() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "COMS");
     courseParams.add("courseCode", "12");
@@ -319,7 +318,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void changeCourseTimeTest_deptNotFound() throws Exception {
+  public void changeCourseTimeTestDeptNotFound() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "COMS");
     courseParams.add("courseCode", "12");
@@ -345,7 +344,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void changeCourseTeacherTest_deptNotFound() throws Exception {
+  public void changeCourseTeacherTestDeptNotFound() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "COMS");
     courseParams.add("courseCode", "12");
@@ -371,7 +370,7 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void changeCourseLocationTest_NotFound() throws Exception {
+  public void changeCourseLocationTestNotFound() throws Exception {
     MultiValueMap<String, String> courseParams = new LinkedMultiValueMap<>();
     courseParams.add("deptCode", "COMS");
     courseParams.add("courseCode", "12");

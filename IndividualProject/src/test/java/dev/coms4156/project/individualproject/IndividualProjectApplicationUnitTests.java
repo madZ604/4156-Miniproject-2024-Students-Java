@@ -11,14 +11,13 @@ import org.junit.jupiter.api.Test;
  */
 public class IndividualProjectApplicationUnitTests {
   private IndividualProjectApplication mockProj;
-  private MyFileDatabase myFileDatabase;
 
   /**
    * Setting up to not alter data.txt.
    */
   @BeforeEach
   public void setUp() {
-    myFileDatabase = new MyFileDatabase(0, "./data.txt");
+    MyFileDatabase myFileDatabase = new MyFileDatabase(0, "./data.txt");
     IndividualProjectApplication.overrideDatabase(myFileDatabase);
     mockProj.myFileDatabase = null;
   }
